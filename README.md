@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## dApp UI (mobile-first)
 
-## Getting Started
+Проект: Next.js 16 (App Router) + React 19 + Tailwind CSS 4.
 
-First, run the development server:
+Собран базовый мобильный интерфейс: хедер с меню (Sheet), переключатель темы (dark по умолчанию), hero-блок "Lending", KPI-плашки, баннер Rewards и сетка карточек ассетов. Контент — заглушки.
+
+### Запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Переключение темы
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Переключатель в правой части хедера. Состояние хранится в localStorage (ключ `ui-theme`). Темная тема активна при первом визите.
 
-## Learn More
+### Структура ключевых компонентов
 
-To learn more about Next.js, take a look at the following resources:
+- `src/components/theme/theme-provider.tsx` — провайдер темы (управляет классом `dark` на `<html>`).
+- `src/components/theme/theme-toggle.tsx` — кнопка-тоггл с иконками Sun/Moon (lucide-react).
+- `src/components/header/mobile-header.tsx` — мобильный хедер, меню внутри `Sheet`.
+- `src/components/ui/*` — примитивы (button, card, switch, sheet) в стиле shadcn упрощённые.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Кодстайл
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Следуйте правилам из `codestyle.docs.md`: строгая типизация, `cn` из `@/lib/utils`, без any.
 
-## Deploy on Vercel
+### Дальнейшие шаги (предложения)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Добавить реальные данные и форматирование чисел.
+- Реализовать состояние подключения кошелька (например, RainbowKit / wagmi).
+- Адаптировать десктопную сетку и навигацию.
+- Написать unit-тесты для провайдера темы.

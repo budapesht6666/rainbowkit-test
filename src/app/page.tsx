@@ -1,8 +1,36 @@
+import { MobileHeader } from '@/components/header/mobile-header';
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <h1>Hello</h1>
+    <div className="flex flex-col min-h-screen text-foreground">
+      <MobileHeader />
+
+      <main className="grow container h-full mx-auto px-4">
+        <div className="h-1000">
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+          <h1 className="text-center">Hello!!!</h1>
+        </div>
+        <h1 className="text-center">Hello!!!</h1>
       </main>
     </div>
   );
