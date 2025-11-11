@@ -4,15 +4,18 @@ import { Menu, Wallet } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { cn } from '@/lib/utils';
 
 export function MobileHeader() {
   return (
     <header
-      className="sticky top-0 z-40 w-full
-      border-b border-white/10
-      bg-background/30 supports-backdrop-filter:bg-background/20
-      backdrop-blur-xl backdrop-saturate-150
-      shadow-[inset_0_-1px_0_0_rgba(255,255,255,0.06)]"
+      className={cn(
+        'sticky top-0 z-40 w-full',
+        'border-b border-white/10',
+        'bg-background/30 supports-backdrop-filter:bg-background/20',
+        'backdrop-blur-xl backdrop-saturate-150',
+        'shadow-[inset_0_-1px_0_0_rgba(255,255,255,0.06)]',
+      )}
     >
       <div className="mx-auto flex h-14 container items-center justify-between px-4">
         <div className="flex items-center gap-2">

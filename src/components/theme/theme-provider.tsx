@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, createContext, useContext, type ReactNode } from 'react';
+import { useLayoutEffect, useState, createContext, useContext, type ReactNode } from 'react';
 
 type Theme = 'light' | 'dark';
 
@@ -24,7 +24,8 @@ export function ThemeProvider({
   const [theme, setThemeState] = useState<Theme>(defaultTheme);
 
   // Ensure default dark on first paint; then hydrate from storage
-  useEffect(() => {
+  // useLayoutEffect ensures we adjust classes before paint after hydration
+  useLayoutEffect(() => {
     try {
       const stored = (localStorage.getItem(STORAGE_KEY) as Theme | null) ?? defaultTheme;
       setThemeState(stored);
