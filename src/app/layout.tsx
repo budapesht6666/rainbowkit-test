@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/components/theme/theme-provider';
+import '@rainbow-me/rainbowkit/styles.css';
 import { MobileHeader } from '@/components/header/mobile-header';
+import { Providers } from '@/providers';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,10 +29,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen font-sans`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
+        <Providers>
           <MobileHeader />
           <main className="grow container h-full mx-auto px-4">{children}</main>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

@@ -6,6 +6,7 @@ import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import CustomConnectButton from '../wallet/custom-connect-button';
 
 export function MobileHeader() {
   return (
@@ -52,6 +53,7 @@ export function MobileHeader() {
         </div>
 
         <div className="flex items-center gap-2">
+          <CustomConnectButton size="sm" />
           <ThemeToggle />
         </div>
       </div>
