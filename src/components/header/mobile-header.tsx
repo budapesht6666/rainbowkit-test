@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 export function MobileHeader() {
   return (
@@ -41,11 +42,15 @@ export function MobileHeader() {
               </nav>
             </SheetContent>
           </Sheet>
-          <div className="flex items-center gap-2">
-            <Wallet className="h-4 w-4" />
-            <span className="text-sm font-semibold">dApp</span>
-          </div>
+
+          <Link href="/" aria-label="Home page">
+            <div className="flex items-center gap-2">
+              <Wallet className="h-4 w-4" />
+              <span className="text-sm font-semibold">dApp</span>
+            </div>
+          </Link>
         </div>
+
         <div className="flex items-center gap-2">
           <ThemeToggle />
         </div>
